@@ -84,7 +84,11 @@ class CompetitiveBot(BotAI):
             and self.can_afford(UnitTypeId.OVERLORD)
             and not self.already_pending(UnitTypeId.OVERLORD)):
             self.larva.random.train(UnitTypeId.OVERLORD)
-            return
+            
+        #if have 10+ zlings, attack
+        if (self.units(UnitTypeId.ZERGLING).amount >= 10):
+            for zergling in self.units(UnitTypeId.ZERGLING).idle:
+                zergling.attack(self.enemy_structures.not_flying.random_or(self.enemy_start_locations[0]).position)
 
 
         return #end of on_step function
