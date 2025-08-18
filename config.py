@@ -30,6 +30,7 @@ MAP_POOL = [
     "Flat128",
 
 ]
+MAP_POOL = ["Simple64"] #using only this map to keep it simple
 
 # ===== OPPONENT SETTINGS =====
 # Computer opponent settings (for local games)
